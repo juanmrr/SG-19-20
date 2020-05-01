@@ -4,17 +4,17 @@ class Figura extends THREE.Object3D{
 
     this.tiempoAnterior=Date.now();
     this.velocidad = 1;
-    this.radio = 10;
-    this.altura = 15;
+    this.radio = 5;
+    this.altura = 10;
     this.posYBola = this.altura/2;
     this.baja = true;
 
 
     // Creación de los elementos
     var materialBola = new THREE.MeshNormalMaterial({flatShading: false});
-    var materialCilindro = new THREE.MeshNormalMaterial({flatShading: false, transparent: true, opacity: 0.5});
+    var materialCilindro = new THREE.MeshNormalMaterial({flatShading: false, transparent: true, opacity: 0.35});
     this.contenedor = new THREE.Object3D();
-    this.contenedor.bola = new THREE.Mesh(new THREE.SphereGeometry(),materialBola);
+    this.contenedor.bola = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32),materialBola);
     this.cilindro = new THREE.Mesh(new THREE.CylinderGeometry(this.radio,this.radio,this.altura,20),materialCilindro);
 
 
@@ -33,7 +33,7 @@ class Figura extends THREE.Object3D{
 
       var folder = gui.addFolder('Controles');
 
-      folder.add(this, 'radio', 0,+50,1)
+      folder.add(this, 'radio', 0, 50, 1)
         .name('Radio: ')
         .onChange( function(){
           that.cilindro.geometry=new THREE.CylinderGeometry(that.radio,that.radio,that.altura,20);

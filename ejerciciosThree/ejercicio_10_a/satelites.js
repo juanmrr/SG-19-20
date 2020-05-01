@@ -36,9 +36,9 @@ class Figura extends THREE.Object3D{
       var tiempoActual = Date.now();
       var segundosTranscurridos = (tiempoActual-this.tiempoAnterior)/1000;
 
-      this.rotation.y+=(this.velocidad * 2 * Math.PI/12)*segundosTranscurridos;
-      this.sateliteIntermedio.rotation.y-=(this.velocidad * 2 * Math.PI/12)*segundosTranscurridos;
-      this.sateliteExterno.rotation.y-=2*(this.velocidad * 2 * Math.PI/12 )*segundosTranscurridos;
+      this.rotation.y+=this.velocidad*segundosTranscurridos;
+      this.sateliteIntermedio.rotation.y-=this.velocidad*segundosTranscurridos;
+      this.sateliteExterno.rotation.y-=2*this.velocidad*segundosTranscurridos;
       this.tiempoAnterior= tiempoActual;
     }
 }

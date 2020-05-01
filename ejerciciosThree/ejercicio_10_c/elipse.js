@@ -9,11 +9,11 @@ class Figura extends THREE.Object3D{
 
     // Creación de los elementos
     var materialBola = new THREE.MeshNormalMaterial({flatShading: false});
-    var materialCilindro = new THREE.MeshNormalMaterial({flatShading: false, transparent: true, opacity: 0.5});
+    var materialCilindro = new THREE.MeshNormalMaterial({flatShading: false, transparent: true, opacity: 0.35});
 
     this.contenedor = new THREE.Object3D();
     this.contenedor.contenedor = new THREE.Object3D();
-    this.contenedor.contenedor.bola = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32),materialBola);
+    this.contenedor.contenedor.bola = new THREE.Mesh(new THREE.SphereGeometry(0.25, 32, 32),materialBola);
     this.cilindro = new THREE.Mesh(new THREE.CylinderGeometry(this.radio,this.radio,this.altura,32),materialCilindro);
 
     this.contenedor.contenedor.bola.position.set(this.radio,0,0);
@@ -36,7 +36,7 @@ class Figura extends THREE.Object3D{
       folder.add(this, 'desfase', 0, 5, 0.1)
         .name('Desfase: ')
         .onChange( function(){
-          that.cilindro.scale.set(that.desfase + that.radio, that.altura, that.radio);
+          that.cilindro.scale.set(that.desfase + that.radio, 1, 1);
         });
 
     }

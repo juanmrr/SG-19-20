@@ -105,19 +105,19 @@ class Figura extends THREE.Object3D{
     aux.diamond = new THREE.Object3D();
     aux.spades = new THREE.Object3D();
 
-    aux.heart.heartExtrudeBevel = this.extrusionConBisel(heartShape, new THREE.MeshPhongMaterial( { color: 0x00ff00 } ),null);
+    aux.heart.heartExtrudeBevel = this.extrusionConBisel(heartShape, new THREE.MeshPhongMaterial( { color: 0xB60000 } ),null);
 
-    aux.diamond.diamondExtrudeBevel = this.extrusionConBisel(diamondShape, new THREE.MeshPhongMaterial( { color: 0x00ff00 } ),null);
+    aux.diamond.diamondExtrudeBevel = this.extrusionConBisel(diamondShape, new THREE.MeshPhongMaterial( { color: 0x0058B6 } ),null);
 
     aux.clover.cloverExtrudeBevel = new THREE.Object3D();
-    aux.clover.cloverExtrudeBevel.body = this.extrusionConBisel(cloverShape, new THREE.MeshPhongMaterial( { color: 0x00ff00 } ),null);
-    aux.clover.cloverExtrudeBevel.base = this.createBaseMesh(new THREE.MeshPhongMaterial( { color: 0x00ff00 }));
+    aux.clover.cloverExtrudeBevel.body = this.extrusionConBisel(cloverShape, new THREE.MeshPhongMaterial( { color: 0x0058B6 } ),null);
+    aux.clover.cloverExtrudeBevel.base = this.createBaseMesh(new THREE.MeshPhongMaterial( { color: 0x0058B6 }));
     aux.clover.cloverExtrudeBevel.add(aux.clover.cloverExtrudeBevel.body);
     aux.clover.cloverExtrudeBevel.add(aux.clover.cloverExtrudeBevel.base);
 
     aux.spades.spadesExtrudeBevel = new THREE.Object3D();
-    aux.spades.spadesExtrudeBevel.body = this.extrusionConBisel(invertHeartShape,new THREE.MeshPhongMaterial( { color: 0x00ff00 } ),null);
-    aux.spades.spadesExtrudeBevel.base = this.createBaseMesh(new THREE.MeshPhongMaterial( { color: 0x00ff00 }));
+    aux.spades.spadesExtrudeBevel.body = this.extrusionConBisel(invertHeartShape,new THREE.MeshPhongMaterial( { color: 0xB60000 } ),null);
+    aux.spades.spadesExtrudeBevel.base = this.createBaseMesh(new THREE.MeshPhongMaterial( { color: 0xB60000 }));
     aux.spades.spadesExtrudeBevel.add(aux.spades.spadesExtrudeBevel.body);
     aux.spades.spadesExtrudeBevel.add(aux.spades.spadesExtrudeBevel.base);
 

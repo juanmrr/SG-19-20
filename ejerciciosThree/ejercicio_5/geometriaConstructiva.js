@@ -99,40 +99,29 @@ class Figura extends THREE.Object3D{
     var that = this;
 
     this.guiControls = {
-        resolution:12,
-        phiLength:0.5,
-        animation:true
+        animation:false
       };
 
       // Shading de los materiales y animación
       var folder=gui.addFolder("Luz y Ejes");
-      /*folder.add (this.material, 'flatShading')
-        .name ('Sombreado Plano : ')
-        .onChange(function(){
-          that.material.needsUpdate=true;
-      });*/
 
       folder.add(this.guiControls,'animation')
-        .name('Animación : ');
-
-      /*var folder = gui.addFolder('Transformaciones Peón');
-
-      folder.add(this.guiControls, 'resolution', 3,+30,1)
-        .name('Resolución')
-        .onChange( function(){
-          that.peon3D.peon3D.geometry = new THREE.LatheGeometry(that.points,that.guiControls.resolution,0.0,2*Math.PI);
-          that.peon.peon.geometry = new THREE.LatheGeometry(that.points,that.guiControls.resolution,0.0,that.guiControls.phiLength);
-        });
-      folder.add(this.guiControls, 'phiLength', 0.1,2*Math.PI,0.1)
-        .name('Ángulo')
-        .onChange( function(){
-          that.peon.peon.geometry = new THREE.LatheGeometry(that.points,that.guiControls.resolution,0.0,that.guiControls.phiLength);
-        });*/
+        .name('Animación: ');
     }
 
     update(){
       if (this.guiControls.animation) {
+        this.taza.rotation.x-=0.01;
+        this.escuadra.rotation.x-=0.01;
+        this.tuerca.rotation.x-=0.01;
 
+        this.taza.rotation.y-=0.01;
+        this.escuadra.rotation.y-=0.01;
+        this.tuerca.rotation.y-=0.01;
+
+        this.taza.rotate.z-=0.01;
+        this.escuadra.rotate.z-=0.01;
+        this.tuerca.rotation.z-=0.01;
       }
     }
 
